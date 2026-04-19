@@ -11,7 +11,11 @@
     'website': 'www.odoo.com',
     'category': 'Custom Modules/Tech Training',
     'depends': ['base'],
-    'data': [],
+    'data': [
+        'security/academy_groups.xml',
+        'security/ir.model.access.csv',
+        'security/academy_security.xml',
+    ],
     'demo': [
         'demo/course_demo.xml',
     ],
