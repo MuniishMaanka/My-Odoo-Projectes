@@ -4,11 +4,11 @@
         <field name="name">academy.course.tree</field>
         <field name="model">academy.course</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name"/>
                 <field name="level"/>
                 <field name="active"/>
-            </tree>
+            </list>
         </field>
     </record>
 
