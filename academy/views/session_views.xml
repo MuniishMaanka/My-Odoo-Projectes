@@ -12,6 +12,8 @@
                     <group>
                         <group>
                             <separator string="Session Data"/>
+                            <field name="date_start"></field>
+                            <field name="date_end"></field>
                         </group>
                         <group>
                             <separator string="Other Fields"/>
