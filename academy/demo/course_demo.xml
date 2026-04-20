@@ -17,6 +17,7 @@
             <field name="level">intermediate</field>
         </record>
 
+        <!-- Website 500 -->
         <record id="course_03" model="academy.course">
             <field name="name">Website 500</field>
             <field name="description"></field>
