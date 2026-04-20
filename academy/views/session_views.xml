@@ -10,12 +10,19 @@
                     <h1><field name="name"/></h1>
                     <h2><field name="session_number"/></h2>
                     <group>
-                        <group>
-                            <separator string="Session Data"/>
-                            <field name="date_start" widget="daterange" 
-                                   options="{'related_end_date': 'date_end'}"/>
-                            <field name="date_end" widget="daterange" 
-                                   options="{'related_start_date': 'date_start'}"/>
+                        <group> <separator string="Session Schedule"/>
+                            <field name="course_id"></field>
+                            <field name="instructor_id"></field>
+                            <label for="date_start" string="Dates"/>
+                            <div class="o_row">
+                                <field name="date_start" widget="daterange" 
+                                       options="{'related_end_date': 'date_end'}"
+                                       placeholder="Start Date"/>
+                                <i class="fa fa-long-arrow-right mx-2" title="Arrow" role="img" aria-label="Arrow"/>
+                                <field name="date_end" widget="daterange" 
+                                       options="{'related_start_date': 'date_start'}"
+                                       placeholder="End Date"/>
+                            </div>
                         </group>
                         <group>
                             <separator string="Other Fields"/>
@@ -33,6 +40,8 @@
             <list string="Session List">
                 <field name="name"/>
                 <field name="session_number"/>
+                <field name="course_id"></field>
+                <field name="instructor_id"></field>
             </list>
         </field>
     </record>
@@ -44,6 +53,12 @@
             <search>
                 <field name="name"/>
                 <field name="session_number"/>
+                <field name="course_id"></field>
+                <field name="instructor_id"></field>
+                <searchpanel>
+                    <field name="course_id" multi="select" enable_counters="1"></field>
+                    <field name="instructor_id"></field>
+                </searchpanel>
             </search>
         </field>
     </record>

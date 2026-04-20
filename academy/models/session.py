@@ -16,6 +16,23 @@ class Session(models.Model):
     date_start = fields.Datetime(string='Start Date', required=True)
     date_end = fields.Datetime(string='End Date', required=True)
 
+    # Relationships
+    course_id = fields.Many2one(
+        comodel_name="academy.course", 
+        string='Course', 
+        ondelete='cascade', 
+        required=True
+    )
+    instructor_id = fields.Many2one(
+        comodel_name="res.users", 
+        string='Instructor', 
+        ondelete='restrict'
+    )
+    student_ids = fields.Many2many(
+        comodel_name="res.partner", 
+        string="Students"
+    )
+
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
