@@ -23,11 +23,17 @@
                                        options="{'related_start_date': 'date_start'}"
                                        placeholder="End Date"/>
                             </div>
+                            <field name="duration"></field>
                         </group>
                         <group>
                             <separator string="Other Fields"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -42,6 +48,9 @@
                 <field name="session_number"/>
                 <field name="course_id"></field>
                 <field name="instructor_id"></field>
+                <field name="date_start"></field>
+                <field name="date_end"></field>
+                <field name="duration"></field>
             </list>
         </field>
     </record>
