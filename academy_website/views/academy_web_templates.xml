@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="course_website">
+        <t t-call="website.layout">
+            <t t-set="title">Academy Courses</t>
+            <div class="oe_structure">
+                <div class="container mt-4">
+                    <h1>Courses</h1>
+                    <t t-foreach="courses" t-as="course">
+                        <div class="mb-5 border-bottom pb-3">
+                            <h3>
+                                <t t-out="course.id"/>. <t t-out="course.name"/>
+                            </h3>
+                            
+                            <p><strong>Description:</strong> 
+                                <span t-field="course.description"/>
+                            </p>
+                            
+                            <p><strong>Level:</strong> 
+                                <span t-field="course.level"/>
+                            </p>
+
+                            <h5 class="mt-3">Sessions</h5>
+                            <t t-foreach="course.session_ids" t-as="session">
+                                <p class="mb-1">
+                                    <i class="fa fa-calendar me-2"/>
+                                    <t t-out="session.name"/> 
+                                    (Last Modified: <span t-field="session.write_date" t-options='{"format": "long"}'/>)
+                                </p>
+                            </t>
+
+                            <t t-if="not course.session_ids">
+                                <p class="text-muted">No Session Currently</p>
+                            </t>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

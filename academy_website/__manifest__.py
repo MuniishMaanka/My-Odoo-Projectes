@@ -14,6 +14,7 @@
 
     # always loaded
     'data': [
+        'views/academy_web_templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
