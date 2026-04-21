@@ -20,6 +20,6 @@
     # only loaded in demonstration mode
     'demo': [
     ],
-    "auto_install"= True,
+    'auto_install': True,
 }
 
