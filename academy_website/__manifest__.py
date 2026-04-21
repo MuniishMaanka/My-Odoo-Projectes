@@ -1,14 +1,11 @@
 {
-    'name': "academy_sale",
+    'name': "academy_website",
 
     'author': "Odoo, Inc",
     'website': "https://www.odoo.com",
 
     'license': 'LGPL-3',
 
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
     'category': 'Custom Modules/Tech Training',
     'version': '0.1',
 
@@ -17,10 +14,6 @@
 
     # always loaded
     'data': [
-        'data/academy_sale_data.xml',
-        'views/academy_sale_menuitems.xml',
-        'views/course_views.xml',
-        'views/product_template_views.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
