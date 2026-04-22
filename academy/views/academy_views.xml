@@ -58,4 +58,13 @@
             </search>
         </field>
     </record>
+    <record id="course_view_pivot" model="ir.ui.view">
+        <field name="name">course.view.pivot</field>
+        <field name="model">academy.course</field>
+        <field name="arch" type="xml">
+            <pivot>
+                
+            </pivot>
+        </field>
+    </record>
 </odoo>
