@@ -8,7 +8,8 @@
                 <group>
                     <field name="session_id" readonly="1"/>
                     <field name="session_product_id" readonly="1"/>
-                    <field name="student_ids" widget="many2many_tags"/>
+                    <field name="session_student_ids" invisable="1"/>
+                    <field name="student_ids" domain="[('id', 'in', session_student_ids)]"/>
                 </group>
                 <footer>
                     <button name="create_sale_orders" 

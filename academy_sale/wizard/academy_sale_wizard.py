@@ -4,20 +4,31 @@ class SaleWizard(models.TransientModel):
     _name = "academy.sale.wizard"
     _description = "Wizard: Quick create orders for session students."
 
-    # The session we are working with
+    def _default_session(self):
+        # Automatically detects the session from the view the user is coming from
+        return self.env["academy.session"].browse(self._context.get("active_id"))
+
     session_id = fields.Many2one(
         comodel_name="academy.session", 
         string="Session", 
-        required=True
+        required=True, 
+        default=_default_session
     )
 
-    # The list of students who will receive a Sales Order
+    # NEW: Shows the students currently in the session (Read-only reference)
+    session_student_ids = fields.Many2many(
+        comodel_name="res.partner", 
+        string="Students in current session", 
+        related="session_id.student_ids", 
+        help="This are the student currently enrolled in the session."
+    )
+
+    # The list of students the admin actually selects to create orders for
     student_ids = fields.Many2many(
         comodel_name="res.partner", 
         string="Students for Sale Order"
     )
 
-    # This "reaches through" the session to find the actual Product Variant to sell
     session_product_id = fields.Many2one(
         comodel_name="product.product",
         string="Product to Sell",
