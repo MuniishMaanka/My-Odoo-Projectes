@@ -1,2 +1,2 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_academy_sale_academy_sale,academy_sale.academy_sale,model_academy_sale_academy_sale,base.group_user,1,1,1,1
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_academy_sale_wizard,access academy sale wizard,model_academy_sale_wizard,academy.group_academy_admin,1,1,1,1

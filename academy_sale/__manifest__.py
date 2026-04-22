@@ -17,10 +17,12 @@
 
     # always loaded
     'data': [
+        'security/ir.model.access.csv',        
         'data/academy_sale_data.xml',
         'views/academy_sale_menuitems.xml',
         'views/course_views.xml',
-        'views/product_template_views.xml'
+        'views/product_template_views.xml',
+        'wizard/academy_sale_wizard_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
